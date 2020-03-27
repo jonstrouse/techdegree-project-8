@@ -114,10 +114,10 @@ section:hover {
   animation: popup .5s forwards;
 }
 
-.overlay hr {
-  width: 80%;
+hr {
+  border: 1px solid #262a63;
+  width: 90%;
   margin: 1em 0;
-  height: 2px;
 }
 .overlay .info {
   display: flex;
