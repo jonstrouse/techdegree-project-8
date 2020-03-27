@@ -1,0 +1,157 @@
+body {
+  background-color: lavender;
+  font-family: 'Baloo 2', cursive;
+  padding-bottom: 2em;
+}
+.title {
+  font-weight: 500;
+  width: 90vw;
+  margin: 2em auto;
+  text-align: center;
+}
+
+#people {
+  width: 90vw;
+  margin: auto;
+  max-width: 400px;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+#people section {
+  padding: .5em 0;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  transition: .25s ease;
+}
+#people section:hover {
+  transform: scale(1.025);
+  box-shadow: 3px 3px 3px #262a63;
+}
+.blurr {
+  opacity: .5;
+  pointer-events: none;
+}
+
+.employeePhoto {
+  margin: 1em;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.employeePhoto:hover,
+.employeeName:hover,
+.employeeInfo:hover,
+section:hover {
+  cursor: pointer;
+}
+
+.employeeName {
+  margin: 0;
+  padding-left: 10px;
+}
+
+.employeeInfo {
+  margin: 0.5em 0;
+  padding-left: 10px;
+  font-weight: lighter;
+}
+
+.overlayPhoto {
+  border-radius: 50%;
+  margin: auto;
+}
+.overlayInfo,
+.overlayDetails {
+  text-align: center;
+}
+
+#details {
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	pointer-events: none;
+	height: 100vh;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+.overlay {
+  pointer-events: auto;
+  display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  width: 80%;
+  max-width: 320px;
+  background-color: white;
+  padding: .5em 1em;
+  box-shadow: 2px 2px 2px 2px #262a63;
+  border-radius: 5px;
+}
+
+@keyframes popup {
+  0% {
+    transform: scale(.5);
+  }
+  40% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.0);
+  }
+}
+.animate {
+  animation: popup .5s forwards;
+}
+
+.overlay hr {
+  width: 80%;
+  margin: 1em 0;
+  height: 2px;
+}
+.overlay .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.exit {
+  font-weight: normal;
+  font-size: 2em;
+  cursor: pointer;
+  color: #262a63;
+}
+
+.hiddenInfo {
+  display: none;
+}
+
+@media screen and (min-width: 800px) {
+  .title {
+    text-align: left;
+  }
+  #people {
+    max-width: none;
+    grid-template-columns: auto auto;
+  }
+  .overlay {
+    width: 60%;
+    max-width: 400px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #people {
+    grid-template-columns: auto auto auto;
+  }
+}
