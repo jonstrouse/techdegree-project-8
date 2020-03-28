@@ -15,6 +15,7 @@ function getEmployees(json) {
 // Generate the markup for each profile
 function generateHTML(data) {
   data.map( employee => {
+    employee.dob.date = new Date(Date.parse(employee.dob.date)).toLocaleDateString(navigator.location);
     console.log(employee);
     const section = document.createElement('section');
     employeeList.appendChild(section);
